@@ -1,0 +1,8 @@
+ansi-terminal
+fmt
+lens
+lens-regex-pcre
+optparse-applicative
+optparse-generic
+polysemy
+relude
