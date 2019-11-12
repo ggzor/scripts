@@ -77,3 +77,6 @@ virtualenv==16.6.0
 virtualenv-clone==0.5.3
 websocket-client==0.54.0
 xlib==0.21
+
+pynput
+pexpect
