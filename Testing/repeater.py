@@ -8,8 +8,9 @@ from datetime import timedelta
 from time import sleep
 
 defaults = {
-  'await': 0,
-  'awaitPerLine': 0,
+  'await': 3,
+  'awaitPerLine': 0.1,
+  'maxLines': -1
 }
 argument_pattern = compile(r'^--([^=]+)=(.+)$')
 
@@ -25,6 +26,9 @@ if __name__ == "__main__":
 
     controller = Controller()
 
-    for line in stdin:
+    for i, line in enumerate(stdin):
+        if i == int(args['maxLines']):
+            break
+
         controller.type(line)
         sleep(float(args['awaitPerLine']))
