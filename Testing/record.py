@@ -27,6 +27,10 @@ if __name__ == '__main__':
 
         inputs = []
 
+        # Expect input before any input
+        if command.isalive():
+            command.expect('.+')
+
         while True:
             try:
                 if command.isalive():
