@@ -30,6 +30,7 @@ if __name__ == '__main__':
         # Expect input before any input
         if command.isalive():
             command.expect('.+')
+            print(command.after.decode('utf-8'), end='')
 
         while True:
             try:
