@@ -23,7 +23,6 @@ if __name__ == '__main__':
         options = argv[1:]
         
         command = pexpect.spawn(' '.join(options))
-        command.setecho(False)
 
         inputs = []
 
@@ -38,7 +37,7 @@ if __name__ == '__main__':
                     userInput = input()
                     command.sendline(userInput)
                     command.expect('.+')
-                    print(command.after.decode('utf-8'), end='')
+                    print(''.join(command.after.decode('utf-8').splitlines(True)[1:]), end='')
 
                     inputs.append(userInput)
                 else:
