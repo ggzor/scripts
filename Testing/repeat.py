@@ -124,14 +124,16 @@ if __name__ == '__main__':
 
     user_input_main_options.add_argument('-a', '--await',
                                          metavar='AWAIT',
-                                         help=('Time to await before starting to write, you will rarely have to change'
+                                         help=('Time to await before starting to write,'
+                                               ' you will rarely have to change'
                                                ' unless you have problems with line feeds'),
                                          type=float, dest='before_await', default=0.3)
 
     user_input_shortcuts = user_input.add_argument_group(title='shortcuts')
     user_input_shortcuts.add_argument('-k', '--begin-key',
                             metavar='<kc>',
-                            help='The key combination to start typing or continue the typing if "pause" is specified (by default, Ctrl+Alt+Shift+R)',
+                            help=('The key combination to start typing or continue the typing if "pause" is specified'
+                                  ' (by default, Ctrl+Alt+Shift+R)'),
                             dest='begin_key', default='Ctrl+Alt+Shift+R', type=parse_keys)
 
     user_input_shortcuts.add_argument('-n', '--next-key',
